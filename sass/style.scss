@@ -13,3 +13,11 @@ $legacy-support-for-mozilla: false;
 // Import Base
 //////////////////////////////
 @import "partials/global";
+
+//////////////////////////////
+// Import
+//////////////////////////////
+@import "partials/base";
+@import "partials/layout";
+@import "partials/module";
+

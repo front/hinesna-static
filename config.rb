@@ -1,5 +1,6 @@
 require 'singularitygs'
 require 'breakpoint'
+require 'compass-normalize'
 # Require any additional compass plugins here.
 
 
