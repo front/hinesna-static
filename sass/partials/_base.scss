@@ -1,6 +1,5 @@
-@import "normalize";
-
 body {
+  font-family: $font-family-sans;
   @include baseline-grid-background(26px, #ccc);
 }
 
@@ -13,6 +12,7 @@ body {
 @include establish-baseline;
 
 // Headings
+
 h1 {
   @include adjust-font-size-to(32px);
 }
@@ -33,7 +33,16 @@ h5 {
   @include adjust-font-size-to(12px);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  @include adjust-leading-to(1,26px);
+}
+
+hr {
+  display: none;
+}
+
+
 // Common
 .element--invisible {
-  @include squish-text;
+  @extend %element-invisible;
 }

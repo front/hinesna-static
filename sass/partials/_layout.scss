@@ -27,6 +27,7 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
 .site--logo {
   @include replace-text-with-dimensions('hinesna-logo.png',0,0);
   display: block;

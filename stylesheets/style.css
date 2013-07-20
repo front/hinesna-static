@@ -1,4 +1,10 @@
 @charset "UTF-8";
+.element--invisible {
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
+
 /* normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* normalize.css v2.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
 article,
@@ -215,6 +221,7 @@ table {
 }
 
 body {
+  font-family: "Lato", "Open Sans", Helvetica, sans-serif;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, #cccccc), color-stop(5%, rgba(204, 204, 204, 0)));
   background-image: -webkit-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
   background-image: -moz-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
@@ -267,10 +274,12 @@ h5 {
   line-height: 2.16667em;
 }
 
-.element--invisible {
-  font: 0/0 serif;
-  text-shadow: none;
-  color: transparent;
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1em;
+}
+
+hr {
+  display: none;
 }
 
 .l-wrapper {
@@ -342,7 +351,7 @@ h5 {
 }
 
 .menu--main {
-  font-family: 'Bree Serif', Georgia, serif;
+  font-family: "Bree Serif", Georgia, serif;
   font-size: 20px;
   line-height: 20px;
   letter-spacing: 0.025em;
@@ -360,7 +369,7 @@ h5 {
 }
 .menu--main i {
   display: block;
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "Lato", "Open Sans", Helvetica, sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
@@ -378,7 +387,7 @@ h5 {
   margin-top: 15px;
 }
 .form--search input[type=text] {
-  font-family: 'Bree Serif', Georgia, serif;
+  font-family: "Bree Serif", Georgia, serif;
   color: #A2C3CA;
   position: absolute;
   top: 0;
@@ -411,7 +420,6 @@ h5 {
 }
 
 .section-banner {
-  height: 413px;
   background-image: url('../img/top-banner-bg.jpg?1372421025');
   background-repeat: no-repeat;
   background-position: center center;
@@ -437,7 +445,19 @@ h5 {
   -o-border-radius: 5px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
-  padding: 30px 35px;
+  margin-top: 2.5em;
+  margin-bottom: 2.75em;
+  padding: 28px 35px;
+}
+.block--banner img {
+  border: 4px solid #ececec;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
 }
 
 .block--cta {
@@ -456,21 +476,45 @@ h5 {
   -o-border-radius: 5px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+.block--cta h2 {
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+.block--cta h2 a {
+  color: #49676F;
+  display: block;
+  text-decoration: none;
+  padding-top: 1.125em;
+  padding-bottom: 0.96em;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+.block--cta h2 a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.section-banner .block--cta {
+  margin-top: 162px;
 }
 
-.links-banner li:not(:first-child):before {
+.links--banner li:not(:first-child):before {
   content: '·';
   display: inline-block;
   font-weight: bold;
   color: #EAA206;
   font-size: 1.25em;
   margin-left: 5px;
-  margin-right: 7px;
+  margin-right: 8px;
   vertical-align: bottom;
 }
-.links-banner a {
+.links--banner a {
   color: #EAA206;
-  font-family: Lato, 'Open Sans', Helvetica;
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
@@ -481,17 +525,17 @@ h5 {
   -o-transition: border-bottom-color 0.75s;
   transition: border-bottom-color 0.75s;
 }
-.links-banner a:hover {
+.links--banner a:hover {
   border-bottom-color: #EAA206;
 }
 
 .list--items {
   color: #49676F;
-  font-family: Lato, 'Open Sans', Helvetica;
   font-size: 18px;
   line-height: 28px;
+  letter-spacing: 0.05em;
   padding-left: 0;
-  margin-top: 0.72222em;
+  margin-top: 0.88889em;
 }
 
 .list--tick-bullets {
@@ -503,5 +547,5 @@ h5 {
   list-style-type: none;
 }
 .list--tick-bullets li {
-  padding-left: 35px;
+  padding-left: 33px;
 }

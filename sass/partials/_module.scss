@@ -6,7 +6,7 @@
 }
 
 .menu--main {
-  font-family: 'Bree Serif', Georgia, serif;
+  font-family: $font-family-serif;
   font-size: 20px;
   line-height: 20px;
   letter-spacing: 0.025em;
@@ -25,7 +25,7 @@
   }
   i {
     display: block;
-    font-family: Lato, Helvetica, sans-serif;
+    font-family: $font-family-sans;
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
@@ -41,7 +41,7 @@
   margin-top: 15px;
 
   input[type=text] {
-    font-family: 'Bree Serif', Georgia, serif;
+    font-family: $font-family-serif;
     color: #A2C3CA;
     position: absolute;
     top: 0;
@@ -70,7 +70,6 @@
 
 // Banner
 .section-banner {
-  height: 413px;
   background-image: image-url('top-banner-bg.jpg');
   background-repeat: no-repeat;
   background-position: center center;
@@ -81,16 +80,51 @@
   @include grid-span(5, 8);
   @include style-3dbox($bc: #BBD1D6, $bs: transparentize(#5A8995, 0.28), $bg: rgba(255,255,255,0.9));
 
-  padding: 30px 35px;
+  margin-top: 2.5em;
+  margin-bottom: 2.75em;
+  padding: 28px 35px;
+
+  img {
+    border: 4px solid #ececec;
+    display: inline-block;
+    vertical-align: top;
+    @include border-radius(4px);
+  }
 }
 
 .block--cta {
   @include grid-span(6, 1);
   @include style-3dbox($bw: 2px, $bc: #49676F, $bs: #5A8995, $bg: rgba(255,255,255,0.3));
+  overflow: hidden;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto;
+
+    a {
+      color: #49676F;
+      display: block;
+      text-decoration: none;
+      padding-top: 1.125em;
+      padding-bottom: 0.96em;
+
+      @include transition(background-color 0.5s);
+
+      &:hover {
+        background-color: rgba(255,255,255,0.3);
+      }
+    }
+  }
+
+  .section-banner & {
+    margin-top: 162px;
+  }
 }
 
-
-.links-banner {
+.links--banner {
   li:not(:first-child):before {
     content: '·';
     display: inline-block;
@@ -98,12 +132,11 @@
     color: #EAA206;
     font-size: 1.25em;
     margin-left: 5px;
-    margin-right: 7px;
+    margin-right: 8px;
     vertical-align: bottom;
   }
   a {
     color: #EAA206;
-    font-family: Lato, 'Open Sans', Helvetica;
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
@@ -119,17 +152,17 @@
 
 .list--items {
   color: #49676F;
-  font-family: Lato, 'Open Sans', Helvetica;
   font-size: 18px;
   line-height: 28px;
+  letter-spacing: 0.05em;
   padding-left: 0;
-  margin-top: (13/18) * 1em;
+  margin-top: (16/18) * 1em;
 }
 
 .list--tick-bullets {
   @include pretty-bullets('icon-tick.png', $line-height: 30px);
 
   li {
-    padding-left: image-width('icon-tick.png') + 20px;
+    padding-left: image-width('icon-tick.png') + 18px;
   }
 }
