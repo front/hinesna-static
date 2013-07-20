@@ -1,1 +1,39 @@
 @import "normalize";
+
+body {
+  @include baseline-grid-background(26px, #ccc);
+}
+
+// Use border-box model
+* {
+  @include box-sizing('border-box');
+}
+
+// Typography rhythm
+@include establish-baseline;
+
+// Headings
+h1 {
+  @include adjust-font-size-to(32px);
+}
+
+h2 {
+  @include adjust-font-size-to(20px);
+}
+
+h3 {
+  @include adjust-font-size-to(16px);
+}
+
+h4 {
+  @include adjust-font-size-to(14px);
+}
+
+h5 {
+  @include adjust-font-size-to(12px);
+}
+
+// Common
+.element--invisible {
+  @include squish-text;
+}

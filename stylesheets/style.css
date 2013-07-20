@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* normalize.css v2.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
 article,
@@ -211,4 +212,296 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+body {
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, #cccccc), color-stop(5%, rgba(204, 204, 204, 0)));
+  background-image: -webkit-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  background-image: -moz-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  background-image: -o-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  background-image: linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
+  -webkit-background-size: 100% 26px;
+  -moz-background-size: 100% 26px;
+  -o-background-size: 100% 26px;
+  background-size: 100% 26px;
+  background-position: left top;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* html {
+  font-size: 87.5%;
+}
+
+html {
+  font-size: 14px;
+  line-height: 1.85714em;
+}
+
+h1 {
+  font-size: 2.28571em;
+  line-height: 1.625em;
+}
+
+h2 {
+  font-size: 1.42857em;
+  line-height: 1.3em;
+}
+
+h3 {
+  font-size: 1.14286em;
+  line-height: 1.625em;
+}
+
+h4 {
+  font-size: 1em;
+  line-height: 1.85714em;
+}
+
+h5 {
+  font-size: 0.85714em;
+  line-height: 2.16667em;
+}
+
+.element--invisible {
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
+
+.l-wrapper {
+  max-width: 950px;
+  margin: 0 auto;
+}
+.l-wrapper:before, .l-wrapper:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.l-wrapper:after {
+  clear: both;
+}
+.l-wrapper.clearfix {
+  zoom: 1;
+  /* IE < 8 */
+}
+
+.l-list--inline {
+  list-style-type: none;
+}
+.l-list--inline, .l-list--inline li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+
+#header {
+  background-color: #cdebf1;
+}
+
+.header--wrapper {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#logo {
+  width: 23.40426%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0%;
+  clear: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.site--logo {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-image: url('../img/hinesna-logo.png?1372338567');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 159px;
+  height: 72px;
+  display: block;
+}
+
+.nav--main {
+  width: 57.44681%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 34.04255%;
+  clear: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.menu--main {
+  font-family: 'Bree Serif', Georgia, serif;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.025em;
+}
+.menu--main li {
+  float: left;
+  margin-left: 8.5%;
+}
+.menu--main li:first-child {
+  margin-left: 0;
+}
+.menu--main a {
+  text-decoration: none;
+  color: #49676f;
+}
+.menu--main i {
+  display: block;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #789ca6;
+}
+
+.form--search {
+  width: 6.38298%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  position: relative;
+  margin-top: 15px;
+}
+.form--search input[type=text] {
+  font-family: 'Bree Serif', Georgia, serif;
+  color: #A2C3CA;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  height: 35px;
+  padding: 0 35px 0 17.5px;
+  border: none;
+  -webkit-border-radius: 17.5px;
+  -moz-border-radius: 17.5px;
+  -ms-border-radius: 17.5px;
+  -o-border-radius: 17.5px;
+  border-radius: 17.5px;
+  display: none;
+}
+.form--search input[type=submit] {
+  float: right;
+  position: relative;
+  font-size: 0;
+  width: 35px;
+  height: 35px;
+  z-index: 10;
+  border: none;
+  background-color: #A2C3CA;
+  -webkit-border-radius: 17.5px;
+  -moz-border-radius: 17.5px;
+  -ms-border-radius: 17.5px;
+  -o-border-radius: 17.5px;
+  border-radius: 17.5px;
+}
+
+.section-banner {
+  height: 413px;
+  background-image: url('../img/top-banner-bg.jpg?1372421025');
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.block--banner {
+  width: 40.42553%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  border: 1px solid #bbd1d6;
+  -webkit-box-shadow: inset 0 -2px 0 rgba(90, 137, 149, 0.22), 0 5px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 -2px 0 rgba(90, 137, 149, 0.22), 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -2px 0 rgba(90, 137, 149, 0.22), 0 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px 35px;
+}
+
+.block--cta {
+  width: 48.93617%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0%;
+  clear: none;
+  border: 2px solid #49676f;
+  -webkit-box-shadow: inset 0 -3px 0 rgba(90, 137, 149, 0.5), 0 5px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 -3px 0 rgba(90, 137, 149, 0.5), 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -3px 0 rgba(90, 137, 149, 0.5), 0 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.links-banner li:not(:first-child):before {
+  content: '·';
+  display: inline-block;
+  font-weight: bold;
+  color: #EAA206;
+  font-size: 1.25em;
+  margin-left: 5px;
+  margin-right: 7px;
+  vertical-align: bottom;
+}
+.links-banner a {
+  color: #EAA206;
+  font-family: Lato, 'Open Sans', Helvetica;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-bottom-color 0.75s;
+  -moz-transition: border-bottom-color 0.75s;
+  -o-transition: border-bottom-color 0.75s;
+  transition: border-bottom-color 0.75s;
+}
+.links-banner a:hover {
+  border-bottom-color: #EAA206;
+}
+
+.list--items {
+  color: #49676F;
+  font-family: Lato, 'Open Sans', Helvetica;
+  font-size: 18px;
+  line-height: 28px;
+  padding-left: 0;
+  margin-top: 0.72222em;
+}
+
+.list--tick-bullets {
+  margin-left: 0;
+}
+.list--tick-bullets li {
+  padding-left: 14px;
+  background: url('../img/icon-tick.png?1374250034') no-repeat -0.5px 9.5px;
+  list-style-type: none;
+}
+.list--tick-bullets li {
+  padding-left: 35px;
 }

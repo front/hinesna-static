@@ -1,0 +1,23 @@
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+      clear: both;
+  }
+  &.clearfix {
+      zoom: 1; /* IE < 8 */
+  }
+}
+
+// style
+@mixin style-3dbox($bw: 1px, $bc: black, $bs: grey, $bg: white) {
+  border: $bw solid $bc;
+  @include box-shadow(inset 0 (-1px - $bw) 0 transparentize($bs, 0.5), 0 5px 10px rgba(0,0,0,0.3));
+  @include border-radius(5px);
+  background: $bg;
+}

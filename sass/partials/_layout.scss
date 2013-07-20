@@ -1,0 +1,33 @@
+.l-wrapper {
+  max-width: 950px;
+  margin: 0 auto;
+
+ //@include background-grid;
+  @include clearfix;
+}
+
+.l-list--inline {
+  @include inline-list;
+}
+
+// Header
+#header {
+  background-color: $color-light-blue;
+}
+
+.header--wrapper {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+// Logo
+#logo {
+  @include grid-span(3, 1);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.site--logo {
+  @include replace-text-with-dimensions('hinesna-logo.png',0,0);
+  display: block;
+}
