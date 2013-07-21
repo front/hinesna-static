@@ -1,17 +1,18 @@
 // Compass vertical rhythm
-$base-font-size: 14px;
+$base-font-size:   14px;
 $base-line-height: 26px;
 
 
 // Singularity
 $mobile-first: false;
-$grids: 12;
-$gutters: 1/3;
+$grids:        12;
+$gutters:      1/3;
 
 // Fonts
-$font-family-sans: 'Lato', 'Open Sans', Helvetica, sans-serif;
+$font-family-sans:  'Lato', 'Open Sans', Helvetica, sans-serif;
 $font-family-serif: 'Bree Serif', Georgia, serif;
 
 // Colors
 $color-light-blue: #CDEBF1;
-$color-dark-blue: #49676F;
+$color-dark-blue:  #49676F;
+$color-warm-red:   #DD4635;

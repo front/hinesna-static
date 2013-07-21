@@ -1,13 +1,14 @@
 //////////////////////////////
 // Imports
 //////////////////////////////
+@import "toolkit";
 @import "singularitygs";
 @import "breakpoint";
-@import "compass";
 
 @import "variables";
 @import "mixins";
 @import "extendables";
 
 // Compass
+@import "compass";
 @import "normalize";

@@ -1,13 +1,30 @@
 .l-wrapper {
+  clear: both;
   max-width: 950px;
   margin: 0 auto;
+  @extend %clearfix;
 
- //@include background-grid;
-  @include clearfix;
+  //@include background-grid;
 }
 
 .l-list--inline {
   @include inline-list;
+}
+
+// Build grid
+@for $i from 1 through $grids {
+  .grid-#{$i} {
+    @include float-span($i);
+
+    @if 1 < $i and $i < 7 {
+      $last-grid: $grids/$i;
+      @if round($last-grid) == $last-grid {
+        &:nth-child(#{$last-grid}n) {
+          @include float-span($i, 'omega');
+        }
+      }
+    }
+  }
 }
 
 // Header
@@ -32,3 +49,12 @@
   @include replace-text-with-dimensions('hinesna-logo.png',0,0);
   display: block;
 }
+
+// Content
+.section-content {
+  padding-top: 3.15em;
+  padding-bottom: 2.25em;
+}
+
+// Postscript
+.section-postscript {}

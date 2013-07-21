@@ -1,5 +1,5 @@
-require 'singularitygs'
-require 'breakpoint'
+require 'susy'
+require 'toolkit'
 require 'compass-normalize'
 # Require any additional compass plugins here.
 

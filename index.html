@@ -24,7 +24,7 @@
 
       <form class="form--search">
         <input type="text" name="query" placeholder="Search this site">
-        <input type="submit" value="Search">
+        <input type="submit" value="Search" class="icon-search">
       </form>
     </div>
   </header>
@@ -62,13 +62,14 @@
 
   <div class="section-content">
     <div class="l-wrapper">
-      <section class="block-events">
-        <header>
+      <section class="grid-4 block block--events">
+        <header class="block--events-header">
+          <i class="icon-calendar"></i>
           <h2><a href="#">Hva Skjer?</a></h2>
           <a href="#">Alle <i>+</i></a>
         </header>
 
-        <article>
+        <article class="block--events-article">
           <a href="#">
             <header>
               <h3><time datime="10-05-2013T">5 <abbr title="October">Okt</abbr></time></h3>
@@ -78,7 +79,7 @@
           </a>
         </article>
 
-        <article>
+        <article class="block--events-article">
           <a href="#">
             <header>
               <h3><time datime="10-05-2013T">5 <abbr title="October">Okt</abbr></time></h3>
@@ -88,7 +89,7 @@
           </a>
         </article>
 
-        <article>
+        <article class="block--events-article">
           <a href="#">
             <header>
               <h3><time datime="10-05-2013T">5 <abbr title="October">Okt</abbr></time></h3>
@@ -99,105 +100,111 @@
         </article>
       </section>
 
-      <section class="block">
-        <h1>!?!?!</h1>
+      <section class="grid-4 block block--placeholder">
+        <h1>?</h1>
       </section>
 
-      <section class="block">
-        <h1>!?!?!</h1>
+      <section class="grid-4 block block--placeholder">
+        <h1>?</h1>
       </section>
     </div>
   </div>
 
   <div class="section-postscript">
-    <div class="l-wrapper">
-      <nav class="nav-tabs">
-        <h2>News</h2>
-        <ul>
-          <li><a href="#" class="link-active">Aktuelt</a></li>
-          <li><a href="#">I media</a></li>
-        </ul>
-      </nav>
+    <nav class="l-wrapper nav-tabs">
+      <h2 hidden>News</h2>
+      <ul>
+        <li><a href="#aktuelt" class="link-active">Aktuelt</a></li>
+        <li><a href="#imedia">I media</a></li>
+      </ul>
+    </nav>
 
-      <section id="aktuelt">
-        <h2>Aktuelt</h2>
+    <div class="postscript--content">
+      <div class="l-wrapper">
+        <section class="tab--content is-active" id="aktuelt">
+          <h2 hidden>Aktuelt</h2>
 
-        <article>
-          <header>
-            <h3>Overskrift</h3>
-          </header>
+          <div class="row">
+            <article class="grid-4">
+              <header>
+                <h3 class="title">Overskrift</h3>
+              </header>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
-          <footer>
-            <a href="#" class="link-more">Les hele saken <i>+</i></a>
-          </footer>
-        </article>
+              <footer>
+                <a href="#" class="link-more">Les hele saken <i>+</i></a>
+              </footer>
+            </article>
 
-        <article>
-          <header>
-            <h3>Overskrift</h3>
-          </header>
+            <article class="grid-4">
+              <header>
+                <h3 class="title">Overskrift</h3>
+              </header>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
-          <footer>
-            <a href="#" class="link-more">Les hele saken <i>+</i></a>
-          </footer>
-        </article>
+              <footer>
+                <a href="#" class="link-more">Les hele saken <i>+</i></a>
+              </footer>
+            </article>
 
-        <article>
-          <header>
-            <h3>Overskrift</h3>
-          </header>
+            <article class="grid-4">
+              <header>
+                <h3 class="title">Overskrift</h3>
+              </header>
 
-          <p><img src="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <p><img class="img--article img--left" src="./img/placeholder--article.jpg"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
-          <footer>
-            <a href="#" class="link-more">Les hele saken <i>+</i></a>
-          </footer>
-        </article>
-      </section>
+              <footer>
+                <a href="#" class="link-more">Les hele saken <i>+</i></a>
+              </footer>
+            </article>
+          </div>
+        </section>
 
-      <section id="imedia">
-        <h2>I media</h2>
+        <section class="tab--content" id="imedia">
+          <h2 hidden>I media</h2>
 
-        <article>
-          <header>
-            <h3>Overskrift</h3>
-          </header>
+          <div class="row">
+            <article class="grid-4">
+              <header>
+                <h3 class="title">Overskrift</h3>
+              </header>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
-          <footer>
-            <a href="#" class="link-more">Les hele saken <i>+</i></a>
-          </footer>
-        </article>
+              <footer>
+                <a href="#" class="link-more">Les hele saken <i>+</i></a>
+              </footer>
+            </article>
 
-        <article>
-          <header>
-            <h3>Overskrift</h3>
-          </header>
+            <article class="grid-4">
+              <header>
+                <h3 class="title">Overskrift</h3>
+              </header>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
-          <footer>
-            <a href="#" class="link-more">Les hele saken <i>+</i></a>
-          </footer>
-        </article>
+              <footer>
+                <a href="#" class="link-more">Les hele saken <i>+</i></a>
+              </footer>
+            </article>
 
-        <article>
-          <header>
-            <h3>Overskrift</h3>
-          </header>
+            <article class="grid-4">
+              <header>
+                <h3 class="title">Overskrift</h3>
+              </header>
 
-          <p><img src="#"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <p><img class="img--article img--left" src="./img/placeholder--article.jpg"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
-          <footer>
-            <a href="#" class="link-more">Les hele saken <i>+</i></a>
-          </footer>
-        </article>
-      </section>
+              <footer>
+                <a href="#" class="link-more">Les hele saken <i>+</i></a>
+              </footer>
+            </article>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 
