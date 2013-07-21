@@ -9,7 +9,7 @@ img, video {
   height: auto;
 }
 
-.icon-calendar, .icon-classroom, .icon-facebook, .icon-instagram, .icon-menu-toggle, .icon-menu, .icon-rss, .icon-search, .icon-student, .icon-twitter {
+.icon-calendar, .icon-classroom, .icon-facebook, .icon-instagram, .icon-menu-toggle, .icon-menu, .icon-rss, .icon-search, .icon-student, .icon-twitter, .logo-frontkom {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
@@ -251,16 +251,6 @@ table {
 body {
   color: #49676f;
   font-family: "Lato", "Open Sans", Helvetica, sans-serif;
-  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, #cccccc), color-stop(5%, rgba(204, 204, 204, 0)));
-  background-image: -webkit-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
-  background-image: -moz-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
-  background-image: -o-linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
-  background-image: linear-gradient(bottom, #cccccc 5%, rgba(204, 204, 204, 0) 5%);
-  -webkit-background-size: 100% 26px;
-  -moz-background-size: 100% 26px;
-  -o-background-size: 100% 26px;
-  background-size: 100% 26px;
-  background-position: left top;
 }
 
 * {
@@ -495,6 +485,20 @@ hr {
 .section-content {
   padding-top: 3.15em;
   padding-bottom: 2.25em;
+}
+
+.section-bottom {
+  background-image: url('../img/bottom-bg.jpg?1374414943');
+  background-position: center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.section-footer {
+  color: white;
+  background-color: #2A383D;
 }
 
 .ie6 .icon-calendar, .ie7 .icon-calendar, .ie8 .icon-calendar, .ie6 .icon-classroom, .ie7 .icon-classroom, .ie8 .icon-classroom, .ie6 .icon-facebook, .ie7 .icon-facebook, .ie8 .icon-facebook, .ie6 .icon-instagram, .ie7 .icon-instagram, .ie8 .icon-instagram, .ie6 .icon-menu-toggle, .ie7 .icon-menu-toggle, .ie8 .icon-menu-toggle, .ie6 .icon-menu, .ie7 .icon-menu, .ie8 .icon-menu, .ie6 .icon-rss, .ie7 .icon-rss, .ie8 .icon-rss, .ie6 .icon-search, .ie7 .icon-search, .ie8 .icon-search, .ie6 .icon-student, .ie7 .icon-student, .ie8 .icon-student, .ie6 .icon-twitter, .ie7 .icon-twitter, .ie8 .icon-twitter {
@@ -732,9 +736,38 @@ hr {
   }
 }
 
-i[class^='icon'] {
+[class^='icon'] {
   display: inline-block;
   vertical-align: top;
+}
+
+.ie6 .logo-frontkom, .ie7 .logo-frontkom, .ie8 .logo-frontkom {
+  background-image: url('../img/logos-s8a7981ec07.png');
+  background-repeat: no-repeat;
+}
+
+.logo-frontkom {
+  width: 86px;
+  height: 20px;
+  display: inline-block;
+}
+.ie6 .logo-frontkom, .ie7 .logo-frontkom, .ie8 .logo-frontkom {
+  background-position: 0 0;
+}
+@media (max-resolution: 1.4dppx), (-webkit-max-device-pixel-ratio: 1.4), (max--moz-device-pixel-ratio: 1.4), (max-resolution: 134.4dpi) {
+  .logo-frontkom {
+    background-image: url('../img/logos-s8a7981ec07.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+@media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .logo-frontkom {
+    background-image: url('../img/logos_2x-se7de739227.png');
+    background-repeat: no-repeat;
+    background-size: 86px 20px;
+    background-position: 0 0;
+  }
 }
 
 .nav--main {
@@ -793,16 +826,17 @@ i[class^='icon'] {
   height: 35px;
   padding: 0 35px 0 17.5px;
   border: none;
-  -webkit-border-radius: 17.5px;
-  -moz-border-radius: 17.5px;
-  -ms-border-radius: 17.5px;
-  -o-border-radius: 17.5px;
-  border-radius: 17.5px;
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  -ms-border-radius: 27px;
+  -o-border-radius: 27px;
+  border-radius: 27px;
   display: none;
 }
 .form--search input[type=submit] {
   float: right;
   position: relative;
+  margin-top: -1px;
   z-index: 10;
   background-color: transparent;
   border: none;
@@ -1139,4 +1173,165 @@ i[class^='icon'] {
 }
 .tab--content.is-active {
   display: block;
+}
+
+.bottom--overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bottom--content {
+  color: white;
+  padding-top: 2.85em;
+  padding-bottom: 0.55em;
+}
+.bottom--content .title {
+  margin-top: 0;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.bottom--content .title i {
+  margin-right: 11px;
+  margin-top: -1px;
+  vertical-align: middle;
+}
+.bottom--content a {
+  color: white;
+  text-decoration: none;
+}
+
+.block--bottom {
+  margin-bottom: 2.35em;
+}
+.block--bottom ul {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.block--social-media {
+  width: 48.93617%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0%;
+  clear: none;
+}
+.block--social-media .l-list--inline {
+  display: block;
+}
+.block--social-media .l-list--inline li:before {
+  content: '.';
+  display: inline-block;
+  vertical-align: middle;
+}
+.block--social-media .l-list--inline li:first-child:before {
+  display: none;
+}
+
+.links--social-media {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  margin-bottom: 2.3em;
+}
+.links--social-media li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+.links--social-media li:first-child, .links--social-media li.first {
+  padding-left: 0;
+}
+.links--social-media li:last-child {
+  padding-right: 0;
+}
+.links--social-media li.last {
+  padding-right: 0;
+}
+.links--social-media li {
+  margin-right: 11px;
+}
+.links--social-media li:last-child {
+  margin-right: 0;
+}
+
+.block--nav-bottom {
+  width: 23.40426%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 51.06383%;
+  clear: none;
+}
+
+.block--nav-student {
+  width: 23.40426%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+}
+
+.block--nav-classroom {
+  width: 48.93617%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  clear: both;
+}
+.block--nav-classroom .title a {
+  color: #EAA208;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.block--nav-classroom .title a:hover {
+  color: #b98006;
+}
+
+.footer {
+  padding-top: 1.35em;
+  padding-bottom: 1.35em;
+}
+.footer ul {
+  font-size: 12px;
+}
+.footer ul address {
+  display: inline;
+  font-style: normal;
+}
+.footer ul br {
+  display: none;
+}
+.footer ul span {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 1px solid white;
+}
+.footer ul li {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 1px solid white;
+}
+.footer ul li:first-child {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #dd4635;
+}
+.footer .credit {
+  float: right;
+  vertical-align: middle;
 }

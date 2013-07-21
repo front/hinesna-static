@@ -37,7 +37,6 @@
   padding-bottom: 12px;
 }
 
-
 // Logo
 #logo {
   @include grid-span(3, 1);
@@ -58,3 +57,16 @@
 
 // Postscript
 .section-postscript {}
+
+// Bottom
+.section-bottom {
+  background-image: image-url('bottom-bg.jpg');
+  background-position: center bottom;
+  @include background-size(cover);
+}
+
+// Footer
+.section-footer {
+  color: white;
+  background-color: #2A383D;
+}
