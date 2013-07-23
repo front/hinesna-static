@@ -234,13 +234,13 @@ $logos: 'logos';
   margin-top: (16/18) * 1em;
 
   @include breakpoint($breakpoint-narrow) {
-    font-size: (14/18) * 1em;
+    font-size: (14/14) * 1em;
   }
   @include breakpoint($breakpoint-normal) {
-    font-size: (16/18) * 1em;
+    font-size: (16/14) * 1em;
   }
   @include breakpoint($breakpoint-wide) {
-    font-size: (18/18) * 1em;
+    font-size: (18/14) * 1em;
   }
 }
 
@@ -292,6 +292,12 @@ $logos: 'logos';
     a {
       color: $color-dark-blue;
       text-decoration: none;
+
+      @include transition(color 0.5s);
+
+      &:hover {
+        color: darken($color-dark-blue, 15%);
+      }
     }
   }
   > a {
@@ -304,12 +310,17 @@ $logos: 'logos';
     text-decoration: none;
     text-transform: uppercase;
 
+    @include transition(color 0.5s);
+
     i {
       margin-left: 4px;
 
       font-size: (15/12) * 1em;
       font-style: normal;
       font-weight: bold;
+    }
+    &:hover {
+      color: darken($color-warm-red, 25%);
     }
   }
 }
@@ -435,10 +446,15 @@ $logos: 'logos';
       text-decoration: none;
       text-transform: uppercase;
 
+      @include transition(color 0.5s);
+
       i {
         font-size: (14/12) * 1em;
         font-style: normal;
         margin-left: 4px;
+      }
+      &:hover {
+        color: lighten(#32D3FF, 25%);
       }
     }
   }
@@ -480,6 +496,11 @@ $logos: 'logos';
   a {
     color: white;
     text-decoration: none;
+    @include transition(color 0.5s);
+
+    &:hover {
+      color: #EAA208;
+    }
   }
 }
 
@@ -493,13 +514,7 @@ $logos: 'logos';
 }
 
 .block--social-media {
-  @include breakpoint(min-width $breakpoint-narrow, max-width $breakpoint-wide) {
-    .l-list--inline,
-    .l-list--inline li {
-      display: block;
-    }
-  }
-  @include breakpoint(max-width $breakpoint-narrow, min-width $breakpoint-wide) {
+  @include breakpoint(max-width $breakpoint-narrow) {
     .l-list--inline {
       display: block;
 
@@ -519,9 +534,34 @@ $logos: 'logos';
   }
   @include breakpoint($breakpoint-narrow) {
     @include grid-span(4, 1);
+
+    .l-list--inline,
+    .l-list--inline li {
+      display: block;
+    }
   }
   @include breakpoint($breakpoint-wide) {
     @include grid-span(6, 1);
+
+    .l-list--inline {
+      display: block;
+
+      li {
+        display: inline-block;
+      }
+      li:before {
+        content: '.';
+        display: inline-block;
+        margin-left: 8px;
+        margin-right: 10px;
+        padding-top: 3px;
+        vertical-align: top;
+        line-height: 1;
+      }
+      li:first-child:before {
+        display: none;
+      }
+    }
   }
 }
 
