@@ -28,36 +28,53 @@ $logos: 'logos';
 // Nav main
 .nav--main {
   @include grid-span(7, 5);
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0.857143em;
+  margin-bottom: 0.857143em;
+
+  @include breakpoint($breakpoint-wide) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
 }
 
 .menu--main {
-  font-family: $font-family-serif;
-  font-size: 20px;
-  line-height: 20px;
-  letter-spacing: 0.025em;
+  display: none;
 
-  li {
-    float: left;
-    margin-left: 8.5%;
+  @include breakpoint($breakpoint-narrow) {
+    display: block;
+    font-family: $font-family-serif;
+    font-size: 18px;
+    line-height: 20px;
 
-    &:first-child {
-      margin-left: 0;
+    li {
+      float: left;
+      margin-left: 8.5%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: $color-dark-blue;
+    }
+    i {
+      display: block;
+      font-family: $font-family-sans;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      white-space: nowrap;
+      color: lighten($color-dark-blue, 20%);
     }
   }
-  a {
-    text-decoration: none;
-    color: $color-dark-blue;
-  }
-  i {
-    display: block;
-    font-family: $font-family-sans;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    white-space: nowrap;
-    color: lighten($color-dark-blue, 20%);
+  @include breakpoint($breakpoint-wide) {
+    font-size: 20px;
+    letter-spacing: 0.025em;
+
+    i {
+      font-size: 15px;
+    }
   }
 }
 
@@ -97,10 +114,11 @@ $logos: 'logos';
   background-repeat: no-repeat;
   background-position: center center;
   @include background-size(cover);
+
+  padding-top: 1px;
 }
 
 .block--banner {
-  @include grid-span(5, 8);
   @include style-3dbox($bc: #BBD1D6, $bs: transparentize(#5A8995, 0.28), $bg: rgba(255,255,255,0.9));
 
   margin-top: 2.5em;
@@ -113,15 +131,22 @@ $logos: 'logos';
     vertical-align: top;
     @include border-radius(4px);
   }
+
+  @include breakpoint($breakpoint-narrow) {
+    @include grid-span(6, 7);
+  }
+  @include breakpoint($breakpoint-wide) {
+    @include grid-span(5, 8);
+  }
 }
 
 .block--cta {
-  @include grid-span(6, 1);
   @include style-3dbox($bw: 2px, $bc: #49676F, $bs: #5A8995, $bg: rgba(255,255,255,0.3));
   overflow: hidden;
+  margin-bottom: (39/18) * 1em;
 
   h2 {
-    font-size: 32px;
+    font-size: 18px;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
@@ -131,8 +156,8 @@ $logos: 'logos';
       color: #49676F;
       display: block;
       text-decoration: none;
-      padding-top: 1.125em;
-      padding-bottom: 0.96em;
+      padding-top: 1.65em;
+      padding-bottom: 1.5em;
 
       @include transition(background-color 0.5s);
 
@@ -142,8 +167,25 @@ $logos: 'logos';
     }
   }
 
-  .section-banner & {
-    margin-top: 162px;
+  @include breakpoint($breakpoint-narrow) {
+    @include grid-span(6, 1);
+
+    h2 {
+      font-size: 28px;
+
+      a {
+        padding-top: 1.125em;
+        padding-bottom: 0.96em;
+      }
+    }
+    .section-banner & {
+      margin-top: 162px;
+    }
+  }
+  @include breakpoint($breakpoint-wide) {
+    h2 {
+      font-size: 32px;
+    }
   }
 }
 
@@ -161,7 +203,7 @@ $logos: 'logos';
   a {
     color: #EAA206;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -171,15 +213,35 @@ $logos: 'logos';
       border-bottom-color: #EAA206;
     }
   }
+
+  @include breakpoint($breakpoint-narrow) {
+    a {
+      font-size: 15px;
+    }
+  }
+  @include breakpoint($breakpoint-wide) {
+    a {
+      font-size: 16px;
+    }
+  }
 }
 
 .list--items {
   color: #49676F;
-  font-size: 18px;
-  line-height: 28px;
+  line-height: (28/14) * 1em;
   letter-spacing: 0.05em;
   padding-left: 0;
   margin-top: (16/18) * 1em;
+
+  @include breakpoint($breakpoint-narrow) {
+    font-size: (14/18) * 1em;
+  }
+  @include breakpoint($breakpoint-normal) {
+    font-size: (16/18) * 1em;
+  }
+  @include breakpoint($breakpoint-wide) {
+    font-size: (18/18) * 1em;
+  }
 }
 
 .list--tick-bullets {
@@ -199,6 +261,9 @@ $logos: 'logos';
   h1 {
     margin-top: 3em;
   }
+  @include breakpoint(max-width $breakpoint-narrow) {
+    display: none;
+  }
 }
 
 .block--events {
@@ -206,7 +271,7 @@ $logos: 'logos';
   background-color: #FFFBF5;
   border: 1px solid #F6F0E6;
   @include border-radius(5px);
-  @include box-shadow(inset 0px -2px 0px rgba(215,200,177,0.22), 0 2px 13px rgba(0,0,0,0.2));
+  @include box-shadow(inset 0px -2px 0px rgba(215,200,177,0.22), 0 2px 13px rgba(0,0,0,0.1));
 }
 
 .block--events-header {
@@ -312,12 +377,11 @@ $logos: 'logos';
   ul {
     @include horizontal-list(2px);
 
-    font-size: 20px;
     font-family: $font-family-serif;
   }
   a {
     display: block;
-    padding: 18px 40px;
+    padding: (18/20) * 1em (40/20) * 1em;
     border-left: 1px solid #EAEDEE;
 
     background-color: #5B767C;
@@ -335,12 +399,21 @@ $logos: 'logos';
       background-color: $color-dark-blue;
     }
   }
+
+  @include breakpoint($breakpoint-narrow) {
+    ul {
+      font-size: 20px;
+    }
+  }
 }
 
 .postscript--content {
+  padding-top: 1px;
+
   @include box-shadow(0 -2px 2px rgba(0,0,0,0.21));
   background-color: $color-dark-blue;
   border-bottom: 5px solid #3A5158;
+
   color: white;
   font-size: (16/14) * 1em;
   line-height: (26/16) * 1em;
@@ -396,6 +469,7 @@ $logos: 'logos';
     font-size: 1em;
     font-weight: 400;
     text-transform: uppercase;
+    white-space: nowrap;
 
     i {
       margin-right: 11px;
@@ -419,19 +493,35 @@ $logos: 'logos';
 }
 
 .block--social-media {
-  @include grid-span(6, 1);
-
-  .l-list--inline {
-    display: block;
-
-    li:before {
-      content: '.';
-      display: inline-block;
-      vertical-align: middle;
+  @include breakpoint(min-width $breakpoint-narrow, max-width $breakpoint-wide) {
+    .l-list--inline,
+    .l-list--inline li {
+      display: block;
     }
-    li:first-child:before {
-      display: none;
+  }
+  @include breakpoint(max-width $breakpoint-narrow, min-width $breakpoint-wide) {
+    .l-list--inline {
+      display: block;
+
+      li:before {
+        content: '.';
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 7px;
+        padding-top: 3px;
+        vertical-align: top;
+        line-height: 1;
+      }
+      li:first-child:before {
+        display: none;
+      }
     }
+  }
+  @include breakpoint($breakpoint-narrow) {
+    @include grid-span(4, 1);
+  }
+  @include breakpoint($breakpoint-wide) {
+    @include grid-span(6, 1);
   }
 }
 
@@ -449,15 +539,28 @@ $logos: 'logos';
 }
 
 .block--nav-bottom {
-  @include grid-span(3, 7);
+  @include grid-span(6, 1);
+
+  @include breakpoint($breakpoint-narrow) {
+    @include grid-span(4, 5);
+  }
+  @include breakpoint($breakpoint-wide) {
+    @include grid-span(3, 7);
+  }
 }
 
 .block--nav-student {
-  @include grid-span(3, 10);
+  @include grid-span(6, 7);
+
+  @include breakpoint($breakpoint-narrow) {
+    @include grid-span(4, 9);
+  }
+  @include breakpoint($breakpoint-wide) {
+    @include grid-span(3, 10);
+  }
 }
 
 .block--nav-classroom {
-  @include grid-span(6, 7);
   clear: both;
 
   .title a {
@@ -467,6 +570,15 @@ $logos: 'logos';
     &:hover {
       color: darken(#EAA208, 10%);
     }
+  }
+
+  @include breakpoint($breakpoint-narrow) {
+    @include grid-span(8, 5);
+    clear: both;
+  }
+  @include breakpoint($breakpoint-wide) {
+    @include grid-span(6, 7);
+    clear: both;
   }
 }
 
@@ -512,5 +624,25 @@ $logos: 'logos';
   .credit {
     float: right;
     vertical-align: middle;
+  }
+
+  @include breakpoint(max-width $breakpoint-narrow) {
+    ul li {
+      display: block;
+      margin-left: 0;
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+  @include breakpoint(max-width $breakpoint-wide) {
+    ul li:last-child {
+      display: block;
+      margin-left: 0;
+      padding-left: 0;
+      border-left: none;
+    }
+    .credit {
+      margin-top: 1em;
+    }
   }
 }

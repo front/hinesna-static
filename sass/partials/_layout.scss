@@ -1,8 +1,15 @@
 .l-wrapper {
   clear: both;
-  max-width: 950px;
+  max-width: 93.75%;
   margin: 0 auto;
   @extend %clearfix;
+
+  @include breakpoint($breakpoint-narrow) {
+    max-width: 95%;
+  }
+  @include breakpoint($breakpoint-wide) {
+    max-width: 950px;
+  }
 
   //@include background-grid;
 }
@@ -12,15 +19,17 @@
 }
 
 // Build grid
-@for $i from 1 through $grids {
-  .grid-#{$i} {
-    @include float-span($i);
+@include breakpoint($breakpoint-narrow) {
+  @for $i from 1 through $grids {
+    .grid-#{$i} {
+      @include float-span($i);
 
-    @if 1 < $i and $i < 7 {
-      $last-grid: $grids/$i;
-      @if round($last-grid) == $last-grid {
-        &:nth-child(#{$last-grid}n) {
-          @include float-span($i, 'omega');
+      @if 1 < $i and $i < 7 {
+        $last-grid: $grids/$i;
+        @if round($last-grid) == $last-grid {
+          &:nth-child(#{$last-grid}n) {
+            @include float-span($i, 'omega');
+          }
         }
       }
     }
@@ -51,8 +60,13 @@
 
 // Content
 .section-content {
-  padding-top: 3.15em;
-  padding-bottom: 2.25em;
+  padding-top: (20/14) * 1em;
+  padding-bottom: (25/14) * 1em;
+
+  @include breakpoint($breakpoint-narrow) {
+    padding-top: 3.15em;
+    padding-bottom: 2.25em;
+  }
 }
 
 // Postscript
