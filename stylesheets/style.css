@@ -903,6 +903,9 @@ hr {
     background-color: #B3C9CE;
     border-bottom: 1px solid #FFF;
   }
+  .menu--main > li:last-child {
+    border-bottom: 2px solid #8BACB5;
+  }
   .menu--main > li > a {
     display: block;
     padding: 10px 3.125%;

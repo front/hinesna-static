@@ -51,6 +51,10 @@
     > li {
       background-color: #B3C9CE;
       border-bottom: 1px solid #FFF;
+
+      &:last-child {
+        border-bottom: 2px solid #8BACB5;
+      }
     }
     > li > a {
       display: block;
