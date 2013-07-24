@@ -1,0 +1,29 @@
+// Search
+.form--search {
+  @include grid-span(1,12);
+  position: relative;
+  margin-top: 15px;
+
+  input[type=text] {
+    font-family: $font-family-serif;
+    color: #A2C3CA;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    height: 35px;
+    padding: 0 35px 0 (35px/2);
+    border: none;
+    @include border-radius(54px/2);
+    display: none;
+  }
+
+  input[type=submit] {
+    float: right;
+    position: relative;
+    margin-top: -1px;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+  }
+}

@@ -1,0 +1,139 @@
+// Nav main
+.nav--main {
+  @include grid-span(7, 5);
+  margin-top: 0.857143em;
+  margin-bottom: 0.857143em;
+
+  @include breakpoint($breakpoint-wide) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.menu--main {
+  display: none;
+
+  @include breakpoint($breakpoint-narrow) {
+    display: block;
+    font-family: $font-family-serif;
+    font-size: 18px;
+    line-height: 20px;
+
+    > li {
+      float: left;
+      margin-left: 8.5%;
+      position: relative;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    a {
+      color: $color-dark-blue;
+      text-decoration: none;
+    }
+    i {
+      display: block;
+      font-family: $font-family-sans;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      white-space: nowrap;
+      color: lighten($color-dark-blue, 20%);
+    }
+    b {
+      float: left;
+      margin-top: 0.35em;
+      margin-left: -24px;
+    }
+  }
+  @include breakpoint($breakpoint-wide) {
+    font-size: 20px;
+    letter-spacing: 0.025em;
+
+    i {
+      font-size: 15px;
+    }
+  }
+}
+
+.menu--dropdown {
+  display: none;
+  position: absolute;
+  left: -24px;
+  z-index: 5;
+
+  margin-top: 0;
+  padding: 24px 24px 0;
+  width: 530px;
+
+  background-color: #FFF;
+  border-bottom: 4px solid transparentize(#5a8995, 0.46);
+  @include box-shadow(0px 3px 4px rgba(0,0,0,0.07));
+
+  font-size: (16/20) * 1em;
+
+  > div {
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0.5em;
+    }
+  }
+  a {
+    @include transition(color 0.4s);
+
+    &:hover,
+    &.active {
+      color: $color-warm-orange;
+    }
+  }
+}
+
+.menu--dropdown-title {
+  color: transparentize(#49676f, 0.6);
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.menu--dropdown-menu {
+  margin: 0;
+  padding: 0;
+
+  font-family: $font-family-sans;
+
+  li {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
+.menu--dropdown-menu--inline {
+  @include horizontal-list(0);
+
+  li:before {
+    content: '·';
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: bottom;
+  }
+  li:first-child:before {
+    display: none;
+  }
+}
+
+.menu--dropdown-left {
+  @include grid-span(5, 1);
+}
+
+.menu--dropdown-right {
+  @include grid-span(5, 8);
+}
+
+.menu--dropdown-bottom {
+  clear: both;
+}

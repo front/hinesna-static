@@ -1,112 +1,6 @@
-// Icons
-$icons: 'icons';
-$icons-map: sprite-map('icons/*.png');
-@include sprite-map-generator($icons, 'retina');
-
-@each $icon in sprite-names($icons-map) {
-  .icon-#{$icon} {
-    @include replace-text-pe($icons, $icon, 'retina');
-  }
-}
-
-[class^='icon'] {
-  display: inline-block;
-  vertical-align: top;
-}
-
-// Logos
-$logos: 'logos';
-@include sprite-map-generator($logos, 'retina');
-
-@each $logo in frontkom {
-  .logo-#{$logo} {
-    @include replace-text-pe($logos, $logo, 'retina');
-    display: inline-block;
-  }
-}
-
-// Nav main
-.nav--main {
-  @include grid-span(7, 5);
-  margin-top: 0.857143em;
-  margin-bottom: 0.857143em;
-
-  @include breakpoint($breakpoint-wide) {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-}
-
-.menu--main {
-  display: none;
-
-  @include breakpoint($breakpoint-narrow) {
-    display: block;
-    font-family: $font-family-serif;
-    font-size: 18px;
-    line-height: 20px;
-
-    li {
-      float: left;
-      margin-left: 8.5%;
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-    a {
-      text-decoration: none;
-      color: $color-dark-blue;
-    }
-    i {
-      display: block;
-      font-family: $font-family-sans;
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 600;
-      white-space: nowrap;
-      color: lighten($color-dark-blue, 20%);
-    }
-  }
-  @include breakpoint($breakpoint-wide) {
-    font-size: 20px;
-    letter-spacing: 0.025em;
-
-    i {
-      font-size: 15px;
-    }
-  }
-}
-
-// Search
-.form--search {
-  @include grid-span(1,12);
-  position: relative;
-  margin-top: 15px;
-
-  input[type=text] {
-    font-family: $font-family-serif;
-    color: #A2C3CA;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 5;
-    height: 35px;
-    padding: 0 35px 0 (35px/2);
-    border: none;
-    @include border-radius(54px/2);
-    display: none;
-  }
-
-  input[type=submit] {
-    float: right;
-    position: relative;
-    margin-top: -1px;
-    z-index: 10;
-    background-color: transparent;
-    border: none;
-  }
-}
+@import 'module/sprites';
+@import 'module/nav';
+@import 'module/search';
 
 // Banner
 .section-banner {
@@ -194,14 +88,14 @@ $logos: 'logos';
     content: '·';
     display: inline-block;
     font-weight: bold;
-    color: #EAA206;
+    color: $color-warm-orange;
     font-size: 1.25em;
     margin-left: 5px;
     margin-right: 8px;
     vertical-align: bottom;
   }
   a {
-    color: #EAA206;
+    color: $color-warm-orange;
     font-weight: bold;
     font-size: 12px;
     text-decoration: none;
@@ -210,7 +104,7 @@ $logos: 'logos';
     @include transition(border-bottom-color 0.75s);
 
     &:hover {
-      border-bottom-color: #EAA206;
+      border-bottom-color: $color-warm-orange;
     }
   }
 

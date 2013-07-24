@@ -1,0 +1,37 @@
+// Icons
+$icons: 'icons';
+$icons-map: sprite-map('icons/*.png');
+@include sprite-map-generator($icons, 'retina');
+
+@each $icon in sprite-names($icons-map) {
+  .icon-#{$icon} {
+    @include replace-text-pe($icons, $icon, 'retina');
+  }
+}
+
+[class^='icon'] {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// Logos
+$logos: 'logos';
+@include sprite-map-generator($logos, 'retina');
+
+@each $logo in frontkom {
+  .logo-#{$logo} {
+    @include replace-text-pe($logos, $logo, 'retina');
+    display: inline-block;
+  }
+}
+
+// UI
+$ui: 'ui';
+@include sprite-map-generator($ui, 'retina');
+
+@each $u in arrow-up, arrow-down {
+  .ui-#{$u} {
+    @include replace-text-pe($ui, $u, 'retina');
+    display: inline-block;
+  }
+}

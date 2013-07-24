@@ -39,6 +39,8 @@
 // Header
 #header {
   background-color: $color-light-blue;
+  position: relative;
+  z-index: 15;
 }
 
 .header--wrapper {
