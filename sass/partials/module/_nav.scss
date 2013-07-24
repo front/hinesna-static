@@ -1,9 +1,10 @@
 // Nav main
 .nav--main {
-  @include grid-span(7, 5);
-  margin-top: 0.857143em;
-  margin-bottom: 0.857143em;
-
+  @include breakpoint($breakpoint-narrow) {
+    @include grid-span(7, 5);
+    margin-top: 0.857143em;
+    margin-bottom: 0.857143em;
+  }
   @include breakpoint($breakpoint-wide) {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -12,12 +13,56 @@
 
 .menu--main {
   display: none;
+  display: block;
 
+  font-family: $font-family-serif;
+  font-size: 16px;
+  line-height: 20px;
+
+  > li {
+    display: block;
+  }
+  a {
+    color: $color-dark-blue;
+    text-decoration: none;
+  }
+  i {
+    display: block;
+    font-family: $font-family-sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    white-space: nowrap;
+    color: lighten($color-dark-blue, 20%);
+  }
+  b {
+    float: left;
+    margin-top: 0.35em;
+    margin-left: -24px;
+  }
+
+  @include breakpoint(max-width $breakpoint-narrow) {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+
+    > li {
+      background-color: #B3C9CE;
+      border-bottom: 1px solid #FFF;
+    }
+    > li > a {
+      display: block;
+      padding: 10px (100% - 93.75%) / 2;
+    }
+    b {
+      display: none;
+    }
+  }
   @include breakpoint($breakpoint-narrow) {
     display: block;
-    font-family: $font-family-serif;
     font-size: 18px;
-    line-height: 20px;
 
     > li {
       float: left;
@@ -27,24 +72,6 @@
       &:first-child {
         margin-left: 0;
       }
-    }
-    a {
-      color: $color-dark-blue;
-      text-decoration: none;
-    }
-    i {
-      display: block;
-      font-family: $font-family-sans;
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 600;
-      white-space: nowrap;
-      color: lighten($color-dark-blue, 20%);
-    }
-    b {
-      float: left;
-      margin-top: 0.35em;
-      margin-left: -24px;
     }
   }
   @include breakpoint($breakpoint-wide) {
@@ -57,20 +84,29 @@
   }
 }
 
+.menu--toggle {
+  @include breakpoint(max-width $breakpoint-narrow) {
+    @include grid-span(6,5);
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 0;
+
+    font-size: 12px;
+    font-weight: 900;
+    text-align: right;
+    text-transform: uppercase;
+
+    i {
+      margin: -2px 5px 0;
+      vertical-align: middle;
+    }
+  }
+}
+
 .menu--dropdown {
   display: none;
-  position: absolute;
-  left: -24px;
-  z-index: 5;
-
-  margin-top: 0;
-  padding: 24px 24px 0;
-  width: 530px;
 
   background-color: #FFF;
-  border-bottom: 4px solid transparentize(#5a8995, 0.46);
-  @include box-shadow(0px 3px 4px rgba(0,0,0,0.07));
-
   font-size: (16/20) * 1em;
 
   > div {
@@ -87,6 +123,26 @@
     &.active {
       color: $color-warm-orange;
     }
+  }
+
+  @include breakpoint(max-width $breakpoint-narrow) {
+    padding: 1px (100% - 93.75%) / 2;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 480px;
+    }
+  }
+  @include breakpoint($breakpoint-narrow) {
+    position: absolute;
+    left: -24px;
+    margin-top: 0;
+    padding: 24px 24px 0;
+    width: 530px;
+
+    border-bottom: 4px solid transparentize(#5a8995, 0.46);
+    @include box-shadow(0px 3px 4px rgba(0,0,0,0.07));
   }
 }
 
@@ -105,35 +161,62 @@
 
   li {
     display: block;
-    margin-bottom: 1em;
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(max-width $breakpoint-narrow) {
+    margin-bottom: 10px;
+
+    & + .menu--dropdown-menu {
+      border-top: 1px solid #D7E6EA;
+      padding-top: 10px;
+    }
+
+    a {
+      display: block;
+      padding: 15px 1em;
+
+      border-bottom: 1px solid white;
+      background-color: #D7E6EA;
+
+      font-weight: 900;
+    }
+  }
+  @include breakpoint($breakpoint-narrow) {
+    li {
+      margin-bottom: 1em;
+    }
   }
 }
 
 .menu--dropdown-menu--inline {
-  @include horizontal-list(0);
+  @include breakpoint($breakpoint-narrow) {
+    @include horizontal-list(0);
 
-  li:before {
-    content: '·';
-    display: inline-block;
-    font-weight: bold;
-    font-size: 1.25em;
-    margin-left: 10px;
-    margin-right: 10px;
-    vertical-align: bottom;
+    li:before {
+      content: '·';
+      display: inline-block;
+      font-weight: bold;
+      font-size: 1.25em;
+      margin-left: 10px;
+      margin-right: 10px;
+      vertical-align: bottom;
+    }
+    li:first-child:before {
+      display: none;
+    }
   }
-  li:first-child:before {
-    display: none;
+}
+
+
+@include breakpoint($breakpoint-narrow) {
+  .menu--dropdown-left {
+    @include grid-span(5, 1);
   }
-}
-
-.menu--dropdown-left {
-  @include grid-span(5, 1);
-}
-
-.menu--dropdown-right {
-  @include grid-span(5, 8);
-}
-
-.menu--dropdown-bottom {
-  clear: both;
+  .menu--dropdown-right {
+    @include grid-span(5, 8);
+  }
+  .menu--dropdown-bottom {
+    clear: both;
+  }
 }

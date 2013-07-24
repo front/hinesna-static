@@ -56,7 +56,14 @@
 }
 
 .site--logo {
-  @include replace-text-with-dimensions('hinesna-logo.png',0,0);
+  @include breakpoint(max-width $breakpoint-narrow) {
+    @include replace-text('hinesna-logo.png',0,0);
+    @include background-size('auto 36px');
+    height: 36px;
+  }
+  @include breakpoint($breakpoint-narrow) {
+    @include replace-text-with-dimensions('hinesna-logo.png',0,0);
+  }
   display: block;
 }
 
